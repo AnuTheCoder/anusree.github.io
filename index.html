@@ -111,6 +111,21 @@
       font-size: 14px;
     }
 
+.more-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.toggle-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #38bdf8;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
     @media (max-width: 900px) {
       .layout {
         grid-template-columns: 1fr;
@@ -134,8 +149,8 @@
     <p>Building high-performance desktop applications with deep expertise in semiconductor standards and system-level engineering.</p>
     <p>
       📍 Kannur, Kerala <br>
-      📧 anusreek908@gmail.com <br>
-      📞 9074188581 <br>
+      <a href="mailto:anusreek908@gmail.com">anusreek908@gmail.com</a>
+      <a href="tel:9074188581">9074188581</a>
       <a href="https://www.linkedin.com/in/anusree-jnanakrishnan-7b346a191" target="_blank">LinkedIn</a> |
       <a href="https://github.com/AnuTheCoder" target="_blank">GitHub</a>
     </p>
@@ -180,17 +195,33 @@
       <section class="section">
         <h2>Experience</h2>
 
-        <div class="card">
-          <h3>Software Engineer | Quest Global</h3>
-          <p><strong>Duration:</strong> Sep 2024 – Present</p>
-          <ul>
-            <li>Developing desktop applications using C++ and MFC</li>
-            <li>Worked on semiconductor automation and scheduler algorithms</li>
-            <li>Handled system porting (.NET migration and feature integration)</li>
-            <li>Implemented high-speed communication and GEM interfaces</li>
-            <li>Performed debugging, testing, and code reviews</li>
-          </ul>
-        </div>
+  <div class="card">
+    <h3>Software Engineer | Quest Global</h3>
+    <p><strong>Duration:</strong> Sep 2024 – Present</p>
+
+    <ul>
+      <li>Developing desktop applications using C++ and MFC</li>
+      <li>Worked on semiconductor automation and scheduler algorithms</li>
+      <li>Handled system porting (.NET migration and feature integration)</li>
+      <li>Implemented high-speed communication and GEM interfaces</li>
+      <li>Performed debugging, testing, and code reviews</li>
+    </ul>
+
+    <button class="toggle-btn" onclick="toggleDetails(this)">
+      Show more ▼
+    </button>
+
+    <!-- ONLY WRAPPING ADDED (NO TEXT CHANGED) -->
+    <div class="more-details">
+      <ul>
+        <li>Developing desktop applications using C++ and MFC</li>
+        <li>Worked on semiconductor automation and scheduler algorithms</li>
+        <li>Handled system porting (.NET migration and feature integration)</li>
+        <li>Implemented high-speed communication and GEM interfaces</li>
+        <li>Performed debugging, testing, and code reviews</li>
+      </ul>
+    </div>
+  </div>
 
         <div class="card">
           <h3>Freelance | OPTOMETA | Kannur</h3>
@@ -288,5 +319,18 @@
 
 </div>
 
+<script>
+function toggleDetails(btn) {
+  const details = btn.nextElementSibling;
+
+  if (details.style.display === "block") {
+    details.style.display = "none";
+    btn.innerText = "View project details ▼";
+  } else {
+    details.style.display = "block";
+    btn.innerText = "Hide project details ▲";
+  }
+}
+</script>
 </body>
 </html>
