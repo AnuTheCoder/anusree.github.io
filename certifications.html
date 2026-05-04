@@ -41,30 +41,6 @@ body {
   margin-top: 8px;
 }
 
-/* Filter Bar (UI ready) */
-.filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 30px 0;
-}
-
-.filter {
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(56,189,248,0.08);
-  color: #38bdf8;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.filter:hover {
-  background: rgba(56,189,248,0.2);
-}
-
 /* Grid */
 .grid {
   display: grid;
@@ -88,7 +64,7 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* Glow effect */
+/* FIX: allow clicks through glow layer */
 .card::before {
   content: "";
   position: absolute;
@@ -98,6 +74,7 @@ body {
   height: 200%;
   background: radial-gradient(circle, rgba(56,189,248,0.08), transparent 60%);
   transform: rotate(25deg);
+  pointer-events: none;
 }
 
 /* Title */
@@ -142,6 +119,8 @@ body {
   color: #38bdf8;
   border: 1px solid rgba(56,189,248,0.3);
   transition: 0.3s;
+  position: relative;
+  z-index: 2;
 }
 
 .btn:hover {
@@ -179,8 +158,7 @@ footer {
       <p class="desc">
         Qualified national-level eligibility examination demonstrating strong academic foundation.
       </p>
-      <a href="./certificates/CSAT.jpg" target="_blank" class="btn">View Credential</a>
-
+      <a href="./certificates/OTF.jpg" target="_blank" class="btn">View Credential</a>
     </div>
 
     <!-- CARD 2 -->
@@ -191,8 +169,7 @@ footer {
       <p class="desc">
         English proficiency certification covering listening, reading, writing and speaking skills.
       </p>
-     <a href="./certificates/CSAT.jpg" target="_blank" class="btn">View Credential</a>
-
+      <a href="./certificates/Hackathon.png" target="_blank" class="btn">View Credential</a>
     </div>
 
     <!-- CARD 3 -->
@@ -203,10 +180,8 @@ footer {
       <p class="desc">
         Certified in Emergency Medical Technician skill qualification framework.
       </p>
-     <a href="./certificates/CSAT.jpg" target="_blank" class="btn">View Credential</a>
-
+      <a href="./certificates/CSAT.jpg" target="_blank" class="btn">View Credential</a>
     </div>
-
 
   </div>
 
